@@ -1,0 +1,59 @@
+
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/, http://localhost:8762/eureka
+
+zuul:
+  sensitive-headers: Access-Control-Allow-Origin, Access-Control-Allow-Methods
+  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
+  routes:
+    user-route:
+      path: /user/**
+      service-id: microservice-user-service
+    movie-route:
+      path: /movie/**
+      service-id: microservice-movie-service
+
+#management:
+#  security:
+#    enabled: false
+
+#zuul:
+#  routes:
+#    user-route:
+#      url: http://localhost:8000
+#      path: /user/**
+#    movie-route:
+#      url: http://localhost:8010
+#      path: /movie/**
+
+#zuul:
+#  routes:
+#    user-route:
+#      path: /user/**
+#      url: forward:/microservice-user-service/user
+#    movie-route:
+#      path: /movie/**
+#      url: fordward:http://localhost:8010/movie
+
+#logging:
+#  level:
+#    com.netflix: DEBUG
+
+#ribbon:
+#  eureka:
+#    enabled: false
+#
+#mircoservice-user-service:
+#  ribbon:
+#    listOfServers: localhost:8000
+#
+#microservice-movie-service:
+#  ribbon:
+#    listOfServers: localhost:8010
