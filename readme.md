@@ -12,13 +12,10 @@ tags: Spring Boot,Spring Cloud
 
 【注】因为这篇readme定位是教程类型，所以可能写得比较啰嗦。本人水平有限，如果有写错的地方，大家可以提交修改请求或发布issue（毕竟我真的很菜，还请dalao们多多指教_(:з」∠)_
 
-<!-- <div align="center" padding="20px"> -->
-<!-- ; </div> -->
-
-<img width="600" src="img/MovieDemo Architecture.png" border="10">
-<img width="600" src="img/Home.png">
-<img width="600" src="img/Desc.png">
-<img width="600" src="img/Favorite.png">
+<img src="img/MovieDemo Architecture.png" border="10">
+<img src="img/Home.png">
+<img src="img/Desc.png">
+<img src="img/Favorite.png">
 
 ## 2.项目启动
 ### 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
