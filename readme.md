@@ -20,15 +20,25 @@ tags: Spring Boot,Spring Cloud
 ## 2.项目启动
 ### 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
 ### 2.1. 导入数据库
-<img src="img/mysql.png">
+
 
 1. 在MoiveDemo的目录下，进入CMD（注：有关CMD的操作，拉到页面最下的[tips]部分），进入mysql
-2. 敲下命令：source microservice.sql; 运行文件中的sql语句，新建数据库表格，导入数据
-3. 用以下命令熟悉microservice数据库的schema：
-   1. select database(); 查看当前数据库
-   2. show tables; 当前数据库的表格
-   3. desc movie; 查看movie表格的字段、key等信息
-4. 具体的sql语句
+<img src="img/mysql.png">
+```bash
+# 运行文件中的sql语句，新建数据库表格，导入数据
+mysql> source microservice.sql; 
+
+# 用以下命令熟悉microservice数据库的schema：
+# 查看当前数据库
+mysql> select database(); 
+
+# 当前数据库的表格
+mysql> show tables;
+
+# 查看movie表格的字段、key等信息
+mysql> desc movie; 
+```
+2. 具体的sql语句
    * movie表格：ms-movie-service/movie_schema.sql
    * user表格：ms-user-service/user_schema.sql
 
@@ -44,8 +54,10 @@ tags: Spring Boot,Spring Cloud
 
 ### 2.3. Maven打包项目
 在Maven项目路径下，cmd输入：
-1. mvn clean compile
-2. mvn clean package
+```bash
+$ mvn clean compile
+$ mvn clean package
+```
 即可把项目打包成Jar
 可以看到项目目录下，生成了target文件夹，target目录下包含了项目的Jar包
 打包项目：ms-discovery-eureka, ms-gateway
