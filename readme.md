@@ -1,9 +1,9 @@
----
+```
 title: MovieDemo
 tags: Spring Boot,Spring Cloud
----
+```
 
-## 1.Brief Intro
+# 1.Brief Intro
 一个简单的SpringCloud微服务Demo项目（toy example）
 * 功能：用户可以从网站查询到电影信息，并将电影添加都收藏夹
 * 技术：前端vue + 后端Spring Cloud + 数据库mysql
@@ -17,9 +17,9 @@ tags: Spring Boot,Spring Cloud
 <img src="img/Desc.png">
 <img src="img/Favorite.png">
 
-## 2.项目启动
-### 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
-### 2.1. 导入数据库
+# 2.项目启动
+## 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
+## 2.1. 导入数据库
 
 
 1. 在MoiveDemo的目录下，进入CMD（注：有关CMD的操作，拉到页面最下的[tips]部分），进入mysql
@@ -44,7 +44,7 @@ mysql> desc movie;
    * movie表格：ms-movie-service/movie_schema.sql
    * user表格：ms-user-service/user_schema.sql
 
-### 2.2. maven项目导入IDEA
+## 2.2. maven项目导入IDEA
 1. 用IDEA [import Project]，选中项目目录下的pom.xml文件
 2. 勾选自动导入Maven项目，这样IDEA就会在项目打开后自动导入pom.xml中配置的SpringBoot依赖、插件等（需要连接网络）
 3. 后面一直Next即可
@@ -65,11 +65,18 @@ $ mvn clean package
 即可把项目打包成Jar<br>
 可以看到项目目录下，生成了target文件夹，target目录下包含了项目的Jar包<br>
 打包项目：ms-discovery-eureka, ms-gateway<br>
-tips: 也可以在IDEA的Terminal窗口中使用CMD
+tips: 也可以在IDEA的Terminal窗口中使用CMD<br>
 <img src="img/IDEA terminal.png">
 
-### 2.4. 前端
-CMD进入vue-element-admin路径，安装依赖包：npm install
+## 2.4. 前端
+CMD进入vue-element-admin路径，安装依赖包
+
+```bash
+# vue-element-admin 路径下
+# 安装依赖包
+npm install
+```
+
 【注】前端是从开源的Vue项目vue-element-admin稍微改改就拿来用的。毕竟没有前端，自己写的后端只能用postman和浏览器地址栏来测试响应的JSON，很尴尬的_(:з」∠)_ 因为本人前端知识几乎为0，所以项目改得很粗糙，例如登录验证只能用admin这个账号……将就着用吧。有兴趣的话，可移步vue-element-admin的github仓库和vuejs的官网阅读文档
 vue-element-admin: https://github.com/PanJiaChen/vue-element-admin
 vuejs: https://cn.vuejs.org/
@@ -85,7 +92,7 @@ vuejs: https://cn.vuejs.org/
 4. CMD进入vue-element-admin，启动前端：npm run dev
 5. 随便看看，点一点，enjoy yourself
 
-## 3.关于Spring Boot你需要知道这些
+# 3.关于Spring Boot你需要知道这些
 * pom.xml 依赖文件
 * application.yml 或 application.properties 配置文件
 * 3.3 RestController响应HTTP方法
@@ -140,7 +147,7 @@ public static void main(String[] args)
 controller响应HTTP请求，调用service层的服务处理请求，service层调用mapper层的接口读写数据库
 <img src="img/springboot architecture.png">
 
-## 4.Spring Cloud微服务架构
+# 4.Spring Cloud微服务架构
 ### 4.1. 项目架构
 后端拆解为：
 * 微服务发现组件 service discovery
@@ -158,7 +165,7 @@ controller响应HTTP请求，调用service层的服务处理请求，service层�
 |ms-movie-service|8010|GET /moviesInfo <br>GET /moviesCount <br>GET /desc<br>PUT /collection<br>GET /collection<br>DELETE /collection<br>GET /collection/collections|
 |ms-user-service|8000|POST /login<br>POST /signUp<br>GET /id<br>|
 
-## #Tips
+# #Tips
 便捷地让CMD进入某一路径下：
 在文件浏览器[windows explorer]窗口中，按住[shift]，鼠标右键，点击[Open cmd here]即可
 <img src="img/cmd.png">
