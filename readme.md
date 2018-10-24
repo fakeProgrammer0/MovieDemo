@@ -12,12 +12,12 @@ tags: Spring Boot,Spring Cloud
 
 【注】因为这篇readme定位是教程类型，所以可能写得比较啰嗦。本人水平有限，如果有写错的地方，大家可以提交修改请求或发布issue（毕竟我真的很菜，还请dalao们多多指教_(:з」∠)_
 
-![MovieDemo Architecture](https://github.com/fakeProgrammer0/MovieDemo/blob/master/img/MovieDemo%20Architecture.png)
-
-<img src="img/MovieDemo Architecture.png">
-<img src="img/Home.png">
-<img src="img/Desc.png">
-<img src="img/Favorite.png">
+<div align="center" padding="20px">
+	<img width="600" src="img/MovieDemo Architecture.png" border="10">
+	<img width="600" src="img/Home.png">
+	<img width="600" src="img/Desc.png">
+	<img width="600" src="img/Favorite.png">
+</div>
 
 ## 2.项目启动
 ### 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
