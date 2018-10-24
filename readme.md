@@ -4,25 +4,24 @@ tags: Spring Boot,Spring Cloud
 ```
 
 # 0. 目录
-
-* [1.Brief Intro](#1brief-intro)
-* [2.项目启动](#2项目启动)
-   * [2.0. 环境 & 工具：maven, vue, npm, IDEA, mysql, ...](#20-环境-工具maven-vue-npm-idea-mysql)
-   * [2.1. 导入数据库](#21-导入数据库)
-   * [2.2. maven项目导入IDEA](#22-maven项目导入idea)
-   * [2.3. Maven打包项目](#23-maven打包项目)
-   * [2.4. 前端](#24-前端)
-   * [2.5. 启动项目](#25-启动项目)
-* [3.关于Spring Boot你需要知道这些](#3关于spring-boot你需要知道这些)
-   * [3.1. pom.xml：Maven项目管理依赖的配置文件](#31-pomxmlmaven项目管理依赖的配置文件)
-   * [3.2. application.yml / application.properties：Spring Boot的配置文件](#32-applicationyml-applicationpropertiesspring-boot的配置文件)
-   * [3.3. RestController：后端响应、处理HTTP请求的接口](#33-restcontroller后端响应-处理http请求的接口)
-   * [3.4. Mapper：Mybatis读写数据库的接口](#34-mappermybatis读写数据库的接口)
-   * [3.5. 一种简单的Spring Boot后端架构](#35-一种简单的spring-boot后端架构)
-* [4.Spring Cloud微服务架构](#4spring-cloud微服务架构)
-   * [4.1. 项目架构](#41-项目架构)
-   * [4.2. 项目的组件和API](#42-项目的组件和api)
-* [#Tips](#tips)
+1. [Brief Intro](#1brief-intro)
+2. [项目启动](#2项目启动)
+   1. [环境 & 工具：maven, vue, npm, IDEA, mysql, ...](#20-环境-工具maven-vue-npm-idea-mysql)
+   2. [导入数据库](#21-导入数据库)
+   3. [maven项目导入IDEA](#22-maven项目导入idea)
+   4. [Maven打包项目](#23-maven打包项目)
+   5. [前端](#24-前端)
+   6. [启动项目](#25-启动项目)
+3. [关于Spring Boot你需要知道这些](#3关于spring-boot你需要知道这些)
+   1. [pom.xml：Maven项目管理依赖的配置文件](#31-pomxmlmaven项目管理依赖的配置文件)
+   2. [application.yml / application.properties：Spring Boot的配置文件](#32-applicationyml-applicationpropertiesspring-boot的配置文件)
+   3. [RestController：后端响应、处理HTTP请求的接口](#33-restcontroller后端响应-处理http请求的接口)
+   4. [Mapper：Mybatis读写数据库的接口](#34-mappermybatis读写数据库的接口)
+   5. [一种简单的Spring Boot后端架构](#35-一种简单的spring-boot后端架构)
+4. [Spring Cloud微服务架构](#4spring-cloud微服务架构)
+   1. [项目架构](#41-项目架构)
+   2. [项目的组件和API](#42-项目的组件和api)
+5. [Tips](#5tips)
 
 # 1.Brief Intro
 一个简单的SpringCloud微服务Demo项目（toy example）
@@ -41,7 +40,7 @@ tags: Spring Boot,Spring Cloud
 # 2.项目启动
 ### 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
 ### 2.1. 导入数据库
-1. 在MoiveDemo的目录下，进入CMD（有关CMD的操作，戳[tips](#tips)），进入mysql
+1. 在MoiveDemo的目录下，进入CMD（有关CMD的操作，戳[tips](#5tips)），进入mysql
 <img src="img/mysql.png">
 
 ```sql
@@ -205,6 +204,6 @@ controller响应HTTP请求，调用service层的服务处理请求，service层�
 |ms-movie-service|8010|GET /moviesInfo <br>GET /moviesCount <br>GET /desc<br>PUT /collection<br>GET /collection<br>DELETE /collection<br>GET /collection/collections|
 |ms-user-service|8000|POST /login<br>POST /signUp<br>GET /id<br>|
 
-# #Tips
+# 5.Tips
 便捷地让CMD进入某一路径下：在文件浏览器\[windows explorer]窗口中，按住\[shift]，鼠标右键，点击\[Open cmd here]即可
 <img src="img/cmd.png">
