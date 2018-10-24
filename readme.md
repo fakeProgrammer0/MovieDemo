@@ -24,6 +24,7 @@ tags: Spring Boot,Spring Cloud
 
 1. 在MoiveDemo的目录下，进入CMD（注：有关CMD的操作，拉到页面最下的[tips]部分），进入mysql
 <img src="img/mysql.png">
+
 ```bash
 # 运行文件中的sql语句，新建数据库表格，导入数据
 mysql> source microservice.sql; 
@@ -38,6 +39,7 @@ mysql> show tables;
 # 查看movie表格的字段、key等信息
 mysql> desc movie; 
 ```
+
 2. 具体的sql语句
    * movie表格：ms-movie-service/movie_schema.sql
    * user表格：ms-user-service/user_schema.sql
@@ -54,10 +56,12 @@ mysql> desc movie;
 
 ### 2.3. Maven打包项目
 在Maven项目路径下，cmd输入：
-```bash
+
+``` bash
 $ mvn clean compile
 $ mvn clean package
 ```
+
 即可把项目打包成Jar
 可以看到项目目录下，生成了target文件夹，target目录下包含了项目的Jar包
 打包项目：ms-discovery-eureka, ms-gateway
