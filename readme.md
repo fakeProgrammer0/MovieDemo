@@ -3,9 +3,11 @@ title: MovieDemo
 tags: Spring Boot,Spring Cloud
 ```
 
+# 0. 目录
+
 * [1.Brief Intro](#1brief-intro)
 * [2.项目启动](#2项目启动)
-   * [2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...](#20-环境-工具maven-vue-npm-idea-mysql)
+   * [2.0. 环境 & 工具：maven, vue, npm, IDEA, mysql, ...](#20-环境-工具maven-vue-npm-idea-mysql)
    * [2.1. 导入数据库](#21-导入数据库)
    * [2.2. maven项目导入IDEA](#22-maven项目导入idea)
    * [2.3. Maven打包项目](#23-maven打包项目)
@@ -39,7 +41,7 @@ tags: Spring Boot,Spring Cloud
 # 2.项目启动
 ### 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
 ### 2.1. 导入数据库
-1. 在MoiveDemo的目录下，进入CMD（注：有关CMD的操作，拉到页面最下的[tips]部分），进入mysql
+1. 在MoiveDemo的目录下，进入CMD（有关CMD的操作，戳[tips](#tips)），进入mysql
 <img src="img/mysql.png">
 
 ```sql
@@ -174,13 +176,12 @@ public static void main(String[] args)
 
 在类的定义前标注@Controller，这个控制器类就可以响应HTTP方法了<br>
 而@RestController = @Controller + @ResponseBody，被标注为@RestController的类，方法接受的参数、返回值都是JSON格式的，很方便<br>
-<p>
+<br/>
 - [ ] 占坑，后续会有重要更新
-</p>
+<br/>
 
 ### 3.4. Mapper：Mybatis读写数据库的接口
-创建mapper接口，在抽象方法的定义上标注@Select, @Insert, @Delete, @Update等注解，并填写相关的sql语句，即可读写数据库<br>
-具体见：MovieDemo/ms-movie-service/src/main/.../mapper/MovieMapper.java中的代码
+创建mapper接口，在抽象方法的定义上标注@Select, @Insert, @Delete, @Update等注解，并填写相关的sql语句，即可读写数据库。具体见：MovieDemo/ms-movie-service/src/main/.../mapper/MovieMapper.java中的代码
 
 ### 3.5. 一种简单的Spring Boot后端架构
 controller响应HTTP请求，调用service层的服务处理请求，service层调用mapper层的接口读写数据库
@@ -205,6 +206,5 @@ controller响应HTTP请求，调用service层的服务处理请求，service层�
 |ms-user-service|8000|POST /login<br>POST /signUp<br>GET /id<br>|
 
 # #Tips
-便捷地让CMD进入某一路径下：
-在文件浏览器[windows explorer]窗口中，按住[shift]，鼠标右键，点击[Open cmd here]即可
+便捷地让CMD进入某一路径下：在文件浏览器\[windows explorer]窗口中，按住\[shift]，鼠标右键，点击\[Open cmd here]即可
 <img src="img/cmd.png">
