@@ -62,9 +62,9 @@ $ mvn clean compile
 $ mvn clean package
 ```
 
-即可把项目打包成Jar
-可以看到项目目录下，生成了target文件夹，target目录下包含了项目的Jar包
-打包项目：ms-discovery-eureka, ms-gateway
+即可把项目打包成Jar<br>
+可以看到项目目录下，生成了target文件夹，target目录下包含了项目的Jar包<br>
+打包项目：ms-discovery-eureka, ms-gateway<br>
 tips: 也可以在IDEA的Terminal窗口中使用CMD
 <img src="img/IDEA terminal.png">
 
