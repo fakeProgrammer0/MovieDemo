@@ -18,14 +18,12 @@ tags: Spring Boot,Spring Cloud
 <img src="img/Favorite.png">
 
 # 2.项目启动
-## 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
-## 2.1. 导入数据库
-
-
+### 2.0. 环境 / 工具：maven, vue, npm, IDEA, mysql, ...
+### 2.1. 导入数据库
 1. 在MoiveDemo的目录下，进入CMD（注：有关CMD的操作，拉到页面最下的[tips]部分），进入mysql
 <img src="img/mysql.png">
 
-```bash
+```sql
 # 运行文件中的sql语句，新建数据库表格，导入数据
 mysql> source microservice.sql; 
 
@@ -41,15 +39,17 @@ mysql> desc movie;
 ```
 
 2. 具体的sql语句
-   * movie表格：ms-movie-service/movie_schema.sql
-   * user表格：ms-user-service/user_schema.sql
+   * movie表格：MovieDemo/ms-movie-service/movie_schema.sql
+   * user表格：MovieDemo/ms-user-service/user_schema.sql
 
-## 2.2. maven项目导入IDEA
+### 2.2. maven项目导入IDEA
 1. 用IDEA [import Project]，选中项目目录下的pom.xml文件
 2. 勾选自动导入Maven项目，这样IDEA就会在项目打开后自动导入pom.xml中配置的SpringBoot依赖、插件等（需要连接网络）
 3. 后面一直Next即可
-4. 修改application.yml中的mysql用户、密码（注意：这几个微服务项目用的mysql配置是和mysql 8.0.11版本一致的，并且使用了ssl。mysql版本不同，配置是不一样，如果踩坑遇bug了，请自行搜索或查阅官方文档）
+4. 修改application.yml中的mysql用户、密码
 5. 重复1-4，导入ms-movie-service，ms-user-service，ms-gateway，ms-discover-eureka
+
+【注意】这几个微服务项目用的mysql配置是和**mysql 8.0.11**版本一致的，并且使用了ssl。mysql版本不同，配置是不一样，如果踩坑遇bug了，请自行搜索或查阅官方文档
 <img src="img/import project.png">
 <img src="img/maven1.png">
 <img src="img/maven2.png">
@@ -58,6 +58,7 @@ mysql> desc movie;
 在Maven项目路径下，cmd输入：
 
 ``` bash
+# path: MovieDemo/ms-discover-eureka/
 $ mvn clean compile
 $ mvn clean package
 ```
@@ -68,28 +69,43 @@ $ mvn clean package
 tips: 也可以在IDEA的Terminal窗口中使用CMD<br>
 <img src="img/IDEA terminal.png">
 
-## 2.4. 前端
+### 2.4. 前端
 CMD进入vue-element-admin路径，安装依赖包
 
 ```bash
-# vue-element-admin 路径下
+# path: MovieDemo/vue-element-admin
 # 安装依赖包
 npm install
 ```
 
-【注】前端是从开源的Vue项目vue-element-admin稍微改改就拿来用的。毕竟没有前端，自己写的后端只能用postman和浏览器地址栏来测试响应的JSON，很尴尬的_(:з」∠)_ 因为本人前端知识几乎为0，所以项目改得很粗糙，例如登录验证只能用admin这个账号……将就着用吧。有兴趣的话，可移步vue-element-admin的github仓库和vuejs的官网阅读文档
-vue-element-admin: https://github.com/PanJiaChen/vue-element-admin
-vuejs: https://cn.vuejs.org/
+【注】前端是从开源的Vue项目vue-element-admin稍微改改就拿来用的。毕竟没有前端，自己写的后端只能用postman和浏览器地址栏来测试响应的JSON，很尴尬的_(:з」∠)_ 因为本人前端知识几乎为0，所以项目改得很粗糙，例如登录验证只能用admin这个账号……将就着用吧。有兴趣的话，可移步vue-element-admin的github仓库和vuejs的官网阅读文档：
+* [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
+* [vuejs](https://cn.vuejs.org/)
 
 ### 2.5. 启动项目
 1. 服务发现组件
-在系统hosts文件中添加这一行：127.0.0.1 peer1 peer2
+在系统hosts文件中添加这一行：127.0.0.1 peer1 peer2<br>
 在CMD中进入target文件夹，运行ms-discovery-eureka：
-   * 启动eureka服务发现组件peer1：java -jar microservice-discovery-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
-   * 打开另一个CMD，启动peer2：java -jar microservice-discovery-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+
+```bash
+# path: MovieDemo/ms-discovery-eureka/target
+
+# 启动eureka服务发现组件peer1
+java -jar microservice-discovery-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+
+# 打开另一个CMD，启动peer2
+java -jar microservice-discovery-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
+```
+
 2. 启动ms-gateway的Jar包
 3. 直接在IDEA中启动ms-movie-service和ms-user-service
-4. CMD进入vue-element-admin，启动前端：npm run dev
+4. CMD进入vue-element-admin，启动前端
+
+```bash
+# path: vue-element-admin
+npm run dev
+```
+
 5. 随便看看，点一点，enjoy yourself
 
 # 3.关于Spring Boot你需要知道这些
@@ -118,7 +134,7 @@ vuejs: https://cn.vuejs.org/
 ```
 
 ### 3.2. application.yml / application.properties：Spring Boot的配置文件
-配置项目所需各种属性参数，例如Spring Boot的数据库信息、端口号、日志等等等，各种依赖（比如eureka, zuul）的配置参数
+配置项目所需各种属性参数，例如Spring Boot的数据库信息、端口号、日志等等等，各种依赖（比如eureka, zuul）的配置参数<br>
 两者只是格式不同而已，内容上是等价的。按个人偏好选其中一个即可
 * yml（yet another makeup language）采用严格的缩进形式，属于标记语言
 * properties 采用面向对象语言的属性访问方式
@@ -126,12 +142,14 @@ vuejs: https://cn.vuejs.org/
 
 ### 3.3. RestController：后端响应、处理HTTP请求的接口
 当你熟悉了面向对象编程的逻辑之后，开始接触Spring Boot时你可能会摸不着头脑。整个项目的启动类XXApplication.java的main方法只有一行：
-```
+
+```java
 public static void main(String[] args)
 {
     SpringApplication.run(XXApplication.class, args);
 }
 ```
+
 完全没有像平常编程一样的逻辑：新建类，调用类的方法，各个类之间相互协作……
 其实呀，像Spring Boot这种黑箱子，帮我们做了很多事情，只要写少量的代码就可以提供后端的服务了，Controller（或RestController）正是Spring Boot这个黑箱子和外界交互的接口。
 在类的定义前标注@Controller，这个控制器类就可以响应HTTP方法了
