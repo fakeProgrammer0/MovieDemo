@@ -138,7 +138,7 @@ npm run dev
 ### 3.1. pom.xml：Maven项目管理依赖的配置文件
 包含了Spring Boot, Spring Cloud的各种依赖、插件等。pom.xml文件就好比是Spring Boot项目的“科技管理中心”。举个例子，只要在pom.xml文件中加入mybatis和mysql的依赖，IDEA就会自动导入mybatis和mysql的java库，之后就可以很方便地在整个项目中使用mybatis注解来访问mysql数据库了
 
-```
+```xml
 <dependency>
 	<groupId>org.mybatis.spring.boot</groupId>
 	<artifactId>mybatis-spring-boot-starter</artifactId>
