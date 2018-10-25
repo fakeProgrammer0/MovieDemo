@@ -31,7 +31,9 @@ tags: Spring Boot,Spring Cloud
 * 数据：来源于豆瓣top 250电影，仅用于测试学习
 * 用处：功能虽然简单，这个小型的玩具项目还是可以用来学习Spring Cloud配置时测试、演示功能
 
-【注】因为这篇readme定位是教程类型，所以可能写得比较啰嗦。本人水平有限，如果有写错的地方，大家可以提交修改请求或发布issue（毕竟我真的很菜，还请多多指教_(:з」∠)_
+【注】因为这篇readme定位是教程类型，所以可能写得比较啰嗦。本人水平有限，如果有写错的地方，大家可以提交修改请求或发布issue（毕竟我真的很菜，还请多多指教_(:з」∠)_ <br/>
+
+如果你对Spring Boot还不是很熟悉的话，建议先读一下袁强师兄写的[Demo](https://github.com/acjdxhs/demo)，并配置一下相关环境
 
 <img src="img/MovieDemo Architecture.png" border="10">
 <img src="img/Home.png">
